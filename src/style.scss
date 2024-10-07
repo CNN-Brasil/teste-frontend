@@ -6,7 +6,22 @@
  */
 
 .wp-block-create-block-cnnbr-virtual-library {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	.toggle-checkbox {
+		border-color: lightgrey;
+		transform: translateX(0);
+	}
+	.toggle-checkbox + .toggle-label {
+		background-color: lightgrey;
+	}
+	.toggle-checkbox:checked {
+		border-color: #1abc9c;
+		transform: translateX(calc(100% - 8px));
+	}
+	.toggle-checkbox:checked + .toggle-label {
+		background-color: #1abc9c;
+	}
 }

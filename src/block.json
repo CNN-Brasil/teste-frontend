@@ -15,5 +15,27 @@
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"render": "file:./render.php",
+	"viewScript": "file:./save.js",
+	"attributes": {
+		"showAuthor": {
+			"type": "boolean",
+			"default": true
+		},
+		"next": {
+			"type": "string"
+		},
+		"previous": {
+			"type": "string"
+		},
+		"result": {
+			"type": "array",
+			"default": []
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "blockquote"
+		}
+	}
 }

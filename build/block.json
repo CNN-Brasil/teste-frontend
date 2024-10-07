@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/cnnbr-virtual-library",
+  "version": "0.1.0",
+  "title": "Cnnbr Virtual Library",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "cnnbr-virtual-library",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./save.js",
+  "attributes": {
+    "showAuthor": {
+      "type": "boolean",
+      "default": true
+    },
+    "next": {
+      "type": "string"
+    },
+    "previous": {
+      "type": "string"
+    },
+    "result": {
+      "type": "array",
+      "default": []
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "blockquote"
+    }
+  }
+}

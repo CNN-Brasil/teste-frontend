@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps } from "@wordpress/block-editor";
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,10 +15,23 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
+
+import Library from "./Block/Library";
+import ReactDOM from "react-dom/client";
+
 export default function save() {
-	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Cnnbr Virtual Library – hello from the saved content!' }
-		</p>
-	);
+	const divsToUpdate = document.querySelectorAll(".update-me");
+
+	divsToUpdate.forEach((div) => {
+		const preElement = div.querySelector("pre");
+
+		if (preElement !== null) {
+			const data = JSON.parse(preElement.innerText);
+			const root = ReactDOM.createRoot(div);
+			root.render(<Library {...data} />);
+			div.classList.remove("update-me");
+		}
+	});
 }
+
+save();

@@ -4,8 +4,10 @@
 	"description": "Example block scaffolded with Create Block tool.",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
+	"main": "index.js",
 	"scripts": {
+		"tailwindbuild": "tailwindcss -i ./src/style.scss -o ./build/style.scss --postcss --minify",
+		"tailwindwatch": "tailwindcss -i ./src/style.scss -o ./build/style.scss --watch --postcss --minify",
 		"build": "wp-scripts build",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
@@ -15,6 +17,15 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.0.2"
+		"@types/react": "^18.3.11",
+		"@types/react-dom": "^18.3.0",
+		"@wordpress/scripts": "^30.0.2",
+		"tailwindcss": "^3.4.13",
+		"typescript": "^5.6.2"
+	},
+	"dependencies": {
+		"autoprefixer": "^10.4.20",
+		"express": "^4.21.0",
+		"postcss": "^8.4.47"
 	}
 }
