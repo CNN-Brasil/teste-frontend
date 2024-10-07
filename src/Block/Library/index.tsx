@@ -16,7 +16,7 @@ const Library = (props: any) => {
 				</h1>
 				<>
 					<div className="w-96 aspect-square bg-tertiary absolute z-[-1] -rotate-[61deg] top-[90px] -left-[170px]"></div>
-					<section className="grid gap-5 grid-cols-[repeat(8,minmax(210px,1fr))] overflow-x-auto lg:grid-cols-4">
+					<section className="grid gap-5 md:grid-cols-4 max-md:grid-cols-[repeat(8,minmax(210px,1fr))] overflow-x-auto">
 						{(books || []).map((book: any) => (
 							<div
 								className="bg-white w-52 py-5 rounded flex items-center flex-col justify-center"
